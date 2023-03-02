@@ -58,13 +58,13 @@ def tungs(x):
 
 def tungss(x):
   for remaining in range(x, 0, -1):
-    sys.stdout.write('{}  • {}Installing New Version.                        \r'.format(NC, DW, remaining))
+    sys.stdout.write('{} • {}Installing New Version.                        \r'.format(NC, DW, remaining))
     sleep(0.25)
-    sys.stdout.write('{}  • {}Installing New Version..                       \r'.format(NC, DW, remaining))
+    sys.stdout.write('{} • {}Installing New Version..                       \r'.format(NC, DW, remaining))
     sleep(0.25)
-    sys.stdout.write('{}  • {}Installing New Version..!                      \r'.format(NC, DW, remaining))
+    sys.stdout.write('{} • {}Installing New Version..!                      \r'.format(NC, DW, remaining))
     sleep(0.25)
-    sys.stdout.write('{}  • {}Installing New Version..!!                     \r'.format(NC, DW, remaining))
+    sys.stdout.write('{} • {}Installing New Version..!!                     \r'.format(NC, DW, remaining))
     sleep(0.25)
 
 def welcome():
@@ -695,7 +695,7 @@ else:
 
     if __name__ == '__main__':
       #welcome()
-      ver = 'v0.1'
+      ver = 'v0.2'
       vres = req.get(f'https://raw.githubusercontent.com/deathdies/version/main/Webmaster-Tools/{ver}', headers=hider,cookies={'CONSENT': 'YES+1'}, timeout=10, verify=False).status_code
       if vres == 200:
         if not os.path.exists('Bing'):
@@ -714,17 +714,18 @@ else:
       else:
         lgv()
         tungss(3)
-        os.system(f'cp /sdcard/z/update.sh update.sh')
-        os.system(f'chmod +x update.sh')
-        os.system(f'./update.sh')
-        exit()
+        os.system('rm wt.py')
+        os.system('wget -q -P https://raw.githubusercontent.com/deathdies/WT/main/wt.py')
+        lg()
+        tung(3)
+        exit(f'{NC} • {Y}Upgrade {C}Version {NC}=> {G}DONE{NC}..!!')
   except KeyboardInterrupt:
     exit(f'{NC}\r   •  {DW}=> {DR}Keyboard Interupted{DW}..!!{NC}')
   except FileNotFoundError:
     print(f'{NC}   • {DY}ERROR {DW}=> {DR}File Not Found{DW}..!!{NC}')
     sleep(2)
     main()
- except Exception as e:
+  except Exception as e:
    try:
      print(f'{NC}   •  {DW}=> {DY}Something Went {DR}Wrong{DW}..!!{NC}')
    finally:
