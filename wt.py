@@ -695,7 +695,7 @@ else:
 
     if __name__ == '__main__':
       #welcome()
-      ver = 'v0.1'
+      ver = 'v0.2'
       vres = req.get(f'https://raw.githubusercontent.com/deathdies/version/main/Webmaster-Tools/{ver}', headers=hider,cookies={'CONSENT': 'YES+1'}, timeout=10, verify=False).status_code
       if vres == 200:
         if not os.path.exists('Bing'):
@@ -717,6 +717,7 @@ else:
         os.system('rm wt.py')
         os.system('wget -q -P https://raw.githubusercontent.com/deathdies/WT/main/wt.py')
         lg()
+        print(f'{NC} • • • • • • • • • • • • • {BR}  WEBMASTER  {NC}')
         tung(3)
         exit(f'{NC} • {Y}Upgrade {C}Version {NC}=> {G}DONE{NC}..!!')
   except KeyboardInterrupt:
