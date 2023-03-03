@@ -715,7 +715,7 @@ else:
         lgv()
         tungss(3)
         os.system('rm wt.py')
-        os.system('wget -q -P https://raw.githubusercontent.com/deathdies/WT/main/wt.py')
+        os.system('wget -q https://raw.githubusercontent.com/deathdies/WT/main/wt.py')
         lg()
         print(f'{NC} • • • • • • • • • • • • • {BR}  WEBMASTER  {NC}')
         tung(3)
