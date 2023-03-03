@@ -695,7 +695,7 @@ else:
 
     if __name__ == '__main__':
       #welcome()
-      ver = 'v0.2'
+      ver = 'v0.1'
       vres = req.get(f'https://raw.githubusercontent.com/deathdies/version/main/Webmaster-Tools/{ver}', headers=hider,cookies={'CONSENT': 'YES+1'}, timeout=10, verify=False).status_code
       if vres == 200:
         if not os.path.exists('Bing'):
