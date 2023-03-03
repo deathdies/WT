@@ -718,8 +718,10 @@ else:
         os.system('wget -q https://raw.githubusercontent.com/deathdies/WT/main/wt.py')
         lg()
         print(f'{NC} • • • • • • • • • • • • • {BR}  WEBMASTER  {NC}')
-        tung(3)
-        exit(f'{NC} • {Y}Upgrade {C}Version {NC}=> {G}DONE{NC}..!!')
+        print(f'{NC} • {Y}Upgrade {C}Version {G}DONE{NC}..!!')
+        print(f'{NC} • {C}Please Rerun {Y}This Tools{NC}..!!')
+        tungs(3)
+        exit(f'                    \r')
   except KeyboardInterrupt:
     exit(f'{NC}\r   •  {DW}=> {DR}Keyboard Interupted{DW}..!!{NC}')
   except FileNotFoundError:
