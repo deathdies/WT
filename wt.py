@@ -475,17 +475,23 @@ else:
 
     #Chat GPT
     def askGPT(myQ):
-      apikeys = dotenv_values("GPT/.env")
-      openai.api_key = apikeys["API_KEYS"]
-      res = openai.Completion.create(
-        engine = "text-davinci-003",
-        prompt = myQ,
-        temperature = 0.7,
-        max_tokens = 3000,
-      )
-      resu = res.choices[0].text
-      result = resu.split("\n",2)[2]
-      print(f"{NC}  • {Y}BOT {NC}=>{DW} {result}")
+      try:
+        apikeys = dotenv_values("GPT/.env")
+        openai.api_key = apikeys["API_KEYS"]
+        res = openai.Completion.create(
+          engine = "text-davinci-003",
+          prompt = myQ,
+          temperature = 0.7,
+          max_tokens = 3000,
+        )
+        resu = res.choices[0].text
+        result = resu.split("\n",2)[2]
+        print(f"{NC}  • {Y}BOT {NC}=>{DW} {result}")
+      except:
+        print(f"{NC}  • {Y}API Keys {R}Not Found{NC}!")
+        print(f"{NC}  • {C}Check File {G}GPT/.env{NC}")
+        tung(3)
+        exit()
 
     #Grab URL List
     def grabL(site):
@@ -850,7 +856,8 @@ else:
         lgv()
         tungss(3)
         os.system('rm wt.py')
-        os.system('wget -q https://raw.githubusercontent.com/deathdies/WT/main/wt.py')
+        os.system('apt-get install git -y')
+        os.system('git clone https://github.com/deathdies/WT')
         lg()
         print(f'{NC} • • • • • • • • • • • • • {BR}  WEBMASTER  {NC}')
         print(f'{NC} • {Y}Upgrade {C}Version {G}DONE{NC}..!!')
